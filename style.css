@@ -342,7 +342,106 @@ font-weight:700;
 color:var(--text);
 
 letter-spacing:1px;
+}
 
+    @media (max-width:768px){
+
+    .navbar{
+        width:95%;
+        height:auto;
+        padding:15px 20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .logo{
+        gap:12px;
+    }
+
+    .logo h1{
+        font-size:22px;
+    }
+
+    .planet{
+        width:55px;
+        height:55px;
+    }
+
+    .planet h2{
+        font-size:26px;
+    }
+
+    .ring{
+        width:80px;
+        height:18px;
+    }
+
+    .orbit1{
+        width:70px;
+        height:70px;
+    }
+
+    .orbit2{
+        width:90px;
+        height:90px;
+    }
+
+    .orbit3{
+        width:110px;
+        height:110px;
+    }
+
+    .navbar ul{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .navbar ul li a{
+        font-size:16px;
+    }
+
+    .theme-btn{
+        width:60px;
+        height:30px;
+        font-size:16px;
+    }
+}
+/* Navbar Mobile */
+@media (max-width:480px){
+
+    .navbar{
+        width:100%;
+        padding:15px;
+    }
+
+    .logo h1{
+        font-size:18px;
+    }
+
+    .planet{
+        width:45px;
+        height:45px;
+    }
+
+    .planet h2{
+        font-size:22px;
+    }
+
+    .navbar ul{
+        gap:12px;
+    }
+
+    .navbar ul li a{
+        font-size:15px;
+    }
+
+    .theme-btn{
+        width:55px;
+        height:28px;
+    }
 }
 
 /*==========================================
