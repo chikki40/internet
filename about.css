@@ -132,42 +132,98 @@ border-bottom:1px solid rgba(255,255,255,.08);
         NAVBAR
 =================================*/
 
+
+
 .navbar{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
 .logo h1{
+    font-size:30px;
+    font-weight:700;
+    background:linear-gradient(90deg,var(--main),#fff,var(--second));
+    background-size:300%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:textGlow 6s linear infinite;
+}
+/* Checkbox */
+#menu-toggle{
+    display:none;
+}
 
-font-size:30px;
+/* Hamburger icon */
+.menu-icon{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:var(--text);
+}
+/*=========================
+      MOBILE NAVBAR
+==========================*/
 
-font-weight:700;
+@media (max-width:768px){
 
-background:linear-gradient(90deg,var(--main),#fff,var(--second));
+    .navbar{
+        position:relative;
+        width:100%;
+    }
 
-background-size:300%;
+    .logo h1{
+        font-size:20px;
+    }
 
--webkit-background-clip:text;
+    .menu-icon{
+        display:block;
+    }
 
-color:transparent;
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:var(--bg);
 
-animation:textGlow 6s linear infinite;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
 
+        padding:20px 0;
+
+        transform:scaleY(0);
+        transform-origin:top;
+
+        opacity:0;
+        visibility:hidden;
+
+        transition:.4s;
+    }
+
+    #menu-toggle:checked ~ .nav-links{
+        transform:scaleY(1);
+        opacity:1;
+        visibility:visible;
+    }
+
+    .nav-links li{
+        width:100%;
+        text-align:center;
+    }
+
+    .nav-links li a{
+        display:block;
+        padding:10px 0;
+    }
 }
 
 /*=================================
