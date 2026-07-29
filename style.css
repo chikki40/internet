@@ -1901,3 +1901,83 @@ font-size:26px;
 .quote-box{
 will-change:transform;
 }
+.nav-toggle,
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        position: relative;
+        width: 100%;
+        min-height: 70px;
+        padding: 12px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-content: center;
+        width: 42px;
+        height: 38px;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--card);
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 3px 0;
+        border-radius: 2px;
+        background: var(--primary);
+        transition: 0.25s ease;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px 5% 18px;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    #nav-toggle:checked ~ .website .nav-links {
+        display: flex;
+    }
+
+    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
