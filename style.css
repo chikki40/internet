@@ -1894,7 +1894,12 @@ font-size:26px;
 .menu-toggle {
     display: none;
 }
-
+@media (max-width: 768px) {
+    #nav-toggle:checked ~ .website .navbar .nav-links,
+    header #nav-toggle:checked ~ .navbar .nav-links {
+        display: flex !important;
+    }
+}
 @media (max-width: 768px) {
     .navbar {
         position: relative;
