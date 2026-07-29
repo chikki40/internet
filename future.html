@@ -22,50 +22,62 @@
 
 <body>
 
+
+        >
+
+          =========================-->
 <input type="checkbox" id="theme">
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
 
-<div class="container">
+<div class="website">
 
-<!--=========================
-        NAVBAR
-==========================-->
+        <!--========================
+              HEADER
+        =========================-->
 
-<header>
+        <header>
+            <nav class="navbar">
 
     <div class="logo">
+        <div class="planet">
+            <div class="ring"></div>
 
-        <i class="fas fa-globe"></i>
+            <div class="orbit orbit1"></div>
+            <div class="orbit orbit2"></div>
+            <div class="orbit orbit3"></div>
 
-        <h2>Internet Universe</h2>
+            <h2>🌐</h2>
+        </div>
 
+        <h1>Internet Universe</h1>
     </div>
-
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="about.html">Internet</a>
-
-        <a href="data-travel.html">Journey</a>
-
-        <a href="timeline.html">Timeline</a>
-
-        <a href="protocols.html">Protocols</a>
-
-        <a href="future.html" class="active">Future</a>
-
-    </nav>
-
-    <label for="theme" class="theme-btn">
-
-        <i class="fas fa-sun"></i>
-
-        <i class="fas fa-moon"></i>
-
+                
+    
+       <label for="nav-toggle" class="menu-toggle" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </label>
 
-</header>
+    <!-- Navigation -->
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Internet</a></li>
+        <li><a href="data-travel.html">Journey</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="protocols.html">Protocols</a></li>
+        <li><a href="future.html">Future</a></li>
+    </ul>
 
+    <label for="theme" class="theme-btn">
+        ☀️ 🌙
+    </label>
+
+</nav>
+
+        
+              
+        </header>
 <!--=========================
         HERO SECTION
 ==========================-->
