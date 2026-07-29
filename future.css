@@ -2528,27 +2528,64 @@ footer{
 }
 
 }
-/*==========================================
-        MOBILE HAMBURGER NAVIGATION
-==========================================*/
+/* ==========================================
+   SHARED NAVIGATION
+========================================== */
 
-.nav-toggle,
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .menu-toggle {
     display: none;
 }
 
+.nav-links {
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text, #fff);
+    font-weight: 500;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary, #00d9ff);
+}
+
+/* ==========================================
+   MOBILE HAMBURGER NAVIGATION
+========================================== */
+
 @media (max-width: 768px) {
-    .navbar {
-        position: relative;
-        width: 100%;
-        height: 90px;
-        padding: 0 20px;
-        flex-direction: row !important;
-        align-items: center;
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 999;
     }
 
-    /* Logo size */
+    .navbar {
+        position: relative;
+        width: 100% !important;
+        height: 88px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .logo {
+        display: flex;
+        align-items: center;
         gap: 12px;
     }
 
@@ -2565,34 +2602,7 @@ footer{
         font-size: 26px;
     }
 
-    .ring {
-        width: 80px;
-        height: 18px;
-    }
-
-    .orbit1 {
-        width: 70px;
-        height: 70px;
-    }
-
-    .orbit2 {
-        width: 90px;
-        height: 90px;
-    }
-
-    .orbit3 {
-        width: 110px;
-        height: 110px;
-    }
-
-    /* Hide checkbox */
-    .nav-toggle {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* Three horizontal hamburger lines */
+    /* Three horizontal lines */
     .menu-toggle {
         display: flex;
         position: absolute;
@@ -2610,11 +2620,11 @@ footer{
         width: 36px;
         height: 3px;
         border-radius: 10px;
-        background: var(--text);
+        background: var(--text, #fff);
         box-shadow: 0 0 10px rgba(0, 217, 255, .3);
     }
 
-    /* Theme button on right */
+    /* Sun/moon button */
     .theme-btn {
         width: 68px;
         height: 34px;
@@ -2622,7 +2632,7 @@ footer{
         font-size: 16px;
     }
 
-    /* Navigation links hidden initially */
+    /* Hidden navigation links */
     .navbar .nav-links {
         display: none !important;
         position: absolute;
@@ -2633,9 +2643,8 @@ footer{
         padding: 12px 28px 20px;
         flex-direction: column;
         gap: 0;
-        list-style: none;
         background: rgba(5, 8, 22, .98);
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border, rgba(255, 255, 255, .15));
         box-shadow: 0 18px 30px rgba(0, 0, 0, .35);
     }
 
@@ -2646,16 +2655,11 @@ footer{
     .nav-links li a {
         display: block;
         padding: 13px 0;
-        color: var(--text);
+        color: var(--text, #fff);
         font-size: 16px;
-        text-decoration: none;
     }
 
-    .nav-links li a:hover {
-        color: var(--primary);
-    }
-
-    /* Show links when hamburger is clicked */
+    /* Show links after clicking three lines */
     #nav-toggle:checked ~ .website .navbar .nav-links {
         display: flex !important;
     }
