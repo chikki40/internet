@@ -1885,20 +1885,16 @@ font-size:26px;
     #nav-toggle:checked ~ .website .nav-links{
         display:flex;
     }
+/* Hide menu by default */
+.nav-links{
+    display:none;
+}
 
-    /* Hamburger to X */
-
-    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(1){
-        transform:translateY(10px) rotate(45deg);
-    }
-
-    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(2){
-        opacity:0;
-    }
-
-    #nav-toggle:checked ~ .website .menu-toggle span:nth-child(3){
-        transform:translateY(-10px) rotate(-45deg);
-    }
+/* Show menu when hamburger is clicked */
+#nav-toggle:checked ~ .website .nav-links{
+    display:flex;
+    flex-direction:column;
+}
 
     /* Theme Button */
 
