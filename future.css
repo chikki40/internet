@@ -2527,89 +2527,65 @@ footer{
     transform:none;
 }
 
-}
-/* Hide checkbox */
-.nav-toggle{
+/* ===========================
+   MOBILE NAVIGATION
+=========================== */
+
+#nav-toggle{
     display:none;
 }
 
-/* Desktop */
+.menu-toggle{
+    display:none;
+}
+
 .nav-links{
     display:flex;
     gap:30px;
     list-style:none;
 }
 
-/* Mobile */
 @media (max-width:768px){
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
+    .menu-toggle{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+    }
+
+    .menu-toggle span{
+        width:30px;
+        height:3px;
+        background:#fff;
+        border-radius:5px;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#08131f;
+        text-align:center;
+        padding:15px 0;
+    }
+
+    .nav-links li{
+        margin:15px 0;
+    }
+
+    .nav-links a{
+        color:#fff;
+        text-decoration:none;
+        font-size:18px;
+    }
+
+    #nav-toggle:checked ~ .website header .nav-links{
+        display:flex;
+    }
 }
 
-/* Hide checkbox */
-.nav-toggle{
-    display:none;
-}
 
-/* Desktop */
-.menu-toggle{
-    display:none;
-}
-
-@media (max-width:768px){
-
-.menu-toggle{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    width:32px;
-    height:22px;
-    cursor:pointer;
-}
-
-.menu-toggle span{
-    width:100%;
-    height:3px;
-    background:#fff;
-    border-radius:5px;
-}
-
-.nav-links{
-    position:absolute;
-    top:75px;
-    left:0;
-    width:100%;
-    background:#08131f;
-    list-style:none;
-    display:none;
-    flex-direction:column;
-    text-align:center;
-}
-
-.nav-links li{
-    width:100%;
-}
-
-.nav-links li a{
-    display:block;
-    padding:15px;
-    color:#fff;
-    text-decoration:none;
-}
-
-.nav-links li a:hover{
-    background:#1b8dff;
-}
-
-/* Show menu when clicked */
-
-#nav-toggle:checked ~ .website .nav-links{
-    display:flex;
-}
-
-}
