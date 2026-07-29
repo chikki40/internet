@@ -1881,20 +1881,17 @@ font-size:26px;
     }
 
     /* Show Menu */
-
-    #nav-toggle:checked ~ .website .nav-links{
-        display:flex;
+#nav-toggle:checked ~ .nav-links{
+    display:flex;
+    flex-direction:column;
+}
     }
 /* Hide menu by default */
 .nav-links{
     display:none;
 }
 
-/* Show menu when hamburger is clicked */
-#nav-toggle:checked ~ .website .nav-links{
-    display:flex;
-    flex-direction:column;
-}
+
        
 
     /* Theme Button */
