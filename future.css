@@ -184,13 +184,28 @@ header{
     justify-content:space-between;
     align-items:center;
     width:100%;
-    position:relative;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo h1{
+    font-size:28px;
 }
 
 .nav-links{
     display:flex;
-    gap:38px;
+    align-items:center;
+    gap:35px;
     list-style:none;
+}
+
+
+.menu-toggle{
+    display:none;
 }
 
 .nav-links a{
@@ -236,23 +251,12 @@ header{
 =====================================*/
 
 .theme-btn{
-
-    width:68px;
-    height:35px;
-
-    border-radius:50px;
-
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-
     cursor:pointer;
-
-    backdrop-filter:blur(20px);
-
-    transition:.4s;
-
+    font-size:22px;
+    margin-left:20px;
+         transition:.4s;
 }
+
 
 /* Dark */
 
@@ -2518,39 +2522,40 @@ footer{
     .navbar{
         position:relative;
     }
+@media (max-width:768px){
 
-    .menu-toggle{
-        display:flex;
-        flex-direction:column;
-        gap:5px;
-        cursor:pointer;
-    }
+.menu-toggle{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+}
 
-    .menu-toggle span{
-        width:28px;
-        height:3px;
-        background:#fff;
-        border-radius:5px;
-    }
+.menu-toggle span{
+    width:28px;
+    height:3px;
+    background:#fff;
+}
 
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:75px;
-        left:0;
-        width:100%;
-        background:#08131f;
-        flex-direction:column;
-        text-align:center;
-        padding:15px 0;
-        border-radius:15px;
-    }
+.nav-links{
+    display:none;
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:#08131f;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+}
 
-    .nav-links li{
-        margin:10px 0;
-    }
+#nav-toggle:checked ~ .website .nav-links{
+    display:flex;
+}
 
-    #nav-toggle:checked ~ .website .nav-links{
-        display:flex;
-    }
+.theme-btn{
+    margin-left:auto;
+    margin-right:15px;
+}
+
 }
