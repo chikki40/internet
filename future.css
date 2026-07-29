@@ -179,68 +179,44 @@ header{
 /*=====================================
       NAVBAR
 =====================================*/
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    position:relative;
+}
 
-nav{
-
+.nav-links{
     display:flex;
     gap:38px;
-
+    list-style:none;
 }
 
-nav a{
-
+.nav-links a{
     text-decoration:none;
-
     color:#fff;
-
     font-size:17px;
-
     font-weight:500;
-
     position:relative;
-
     transition:.35s;
-
 }
 
-nav a::after{
-
+.nav-links a::after{
     content:"";
-
     position:absolute;
-
     left:0;
-
     bottom:-8px;
-
     width:0;
-
     height:3px;
-
     border-radius:50px;
-
-    background:linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary));
-
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
     transition:.4s;
-
 }
 
-nav a:hover::after,
-nav .active::after{
-
+.nav-links a:hover::after{
     width:100%;
-
 }
-
-nav a:hover{
-
-    color:var(--primary);
-
-}
-
 /* Day */
 
 #theme:checked~.container nav a{
@@ -2527,11 +2503,9 @@ footer{
     transform:none;
 }
 
-/* ===========================
-   MOBILE NAVIGATION
-=========================== */
+/* ================= MOBILE MENU ================= */
 
-#nav-toggle{
+.nav-toggle{
     display:none;
 }
 
@@ -2539,13 +2513,11 @@ footer{
     display:none;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
 @media (max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
 
     .menu-toggle{
         display:flex;
@@ -2555,7 +2527,7 @@ footer{
     }
 
     .menu-toggle span{
-        width:30px;
+        width:28px;
         height:3px;
         background:#fff;
         border-radius:5px;
@@ -2563,29 +2535,22 @@ footer{
 
     .nav-links{
         display:none;
-        flex-direction:column;
         position:absolute;
-        top:80px;
+        top:75px;
         left:0;
         width:100%;
         background:#08131f;
+        flex-direction:column;
         text-align:center;
         padding:15px 0;
+        border-radius:15px;
     }
 
     .nav-links li{
-        margin:15px 0;
+        margin:10px 0;
     }
 
-    .nav-links a{
-        color:#fff;
-        text-decoration:none;
-        font-size:18px;
-    }
-
-    #nav-toggle:checked ~ .website header .nav-links{
+    #nav-toggle:checked ~ .website .nav-links{
         display:flex;
     }
 }
-
-
